@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-code stability
-=======
-cool stuff
->>>>>>> coolstuff
+HEllO
