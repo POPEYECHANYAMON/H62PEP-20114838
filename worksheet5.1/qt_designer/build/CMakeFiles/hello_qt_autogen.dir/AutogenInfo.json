@@ -1,0 +1,78 @@
+{
+	"BUILD_DIR" : "C:/Users/pop_a/Desktop/worksheet5.1/qt_designer/build/hello_qt_autogen",
+	"CMAKE_BINARY_DIR" : "C:/Users/pop_a/Desktop/worksheet5.1/qt_designer/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "C:/Users/pop_a/Desktop/worksheet5.1/qt_designer/build",
+	"CMAKE_CURRENT_SOURCE_DIR" : "C:/Users/pop_a/Desktop/worksheet5.1/qt_designer",
+	"CMAKE_EXECUTABLE" : "C:/Program Files/CMake/bin/cmake.exe",
+	"CMAKE_SOURCE_DIR" : "C:/Users/pop_a/Desktop/worksheet5.1/qt_designer",
+	"HEADERS" : 
+	[
+		[
+			"C:/Users/pop_a/Desktop/worksheet5.1/qt_designer/mainwindow.h",
+			"MU",
+			"EWIEGA46WW/moc_mainwindow.cpp"
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "C:/Users/pop_a/Desktop/worksheet5.1/qt_designer/build/hello_qt_autogen/include",
+	"MOC_COMPILATION_FILE" : "C:/Users/pop_a/Desktop/worksheet5.1/qt_designer/build/hello_qt_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_NO_DEBUG", "QT_WIDGETS_LIB" ],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"C:/Users/pop_a/Desktop/worksheet5.1/qt_designer/build",
+		"C:/Users/pop_a/Desktop/worksheet5.1/qt_designer",
+		"C:/Users/pop_a/Desktop/the-folder-for-qt/5.12.6/mingw73_32/include",
+		"C:/Users/pop_a/Desktop/the-folder-for-qt/5.12.6/mingw73_32/include/QtWidgets",
+		"C:/Users/pop_a/Desktop/the-folder-for-qt/5.12.6/mingw73_32/include/QtGui",
+		"C:/Users/pop_a/Desktop/the-folder-for-qt/5.12.6/mingw73_32/include/QtANGLE",
+		"C:/Users/pop_a/Desktop/the-folder-for-qt/5.12.6/mingw73_32/include/QtCore",
+		"C:/Users/pop_a/Desktop/the-folder-for-qt/5.12.6/mingw73_32/mkspecs/win32-g++",
+		"C:/Users/pop_a/Desktop/the-folder-for-qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++",
+		"C:/Users/pop_a/Desktop/the-folder-for-qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32",
+		"C:/Users/pop_a/Desktop/the-folder-for-qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward",
+		"C:/Users/pop_a/Desktop/the-folder-for-qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include",
+		"C:/Users/pop_a/Desktop/the-folder-for-qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed",
+		"C:/Users/pop_a/Desktop/the-folder-for-qt/Tools/mingw730_32/i686-w64-mingw32/include"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : true,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"C:/Users/pop_a/Desktop/the-folder-for-qt/Tools/mingw730_32/bin/g++.exe",
+		"-dM",
+		"-E",
+		"-c",
+		"C:/Program Files/CMake/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "C:/Users/pop_a/Desktop/worksheet5.1/qt_designer/build/hello_qt_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 4,
+	"PARSE_CACHE_FILE" : "C:/Users/pop_a/Desktop/worksheet5.1/qt_designer/build/CMakeFiles/hello_qt_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "C:/Users/pop_a/Desktop/the-folder-for-qt/5.12.6/mingw73_32/bin/moc.exe",
+	"QT_UIC_EXECUTABLE" : "C:/Users/pop_a/Desktop/the-folder-for-qt/5.12.6/mingw73_32/bin/uic.exe",
+	"QT_VERSION_MAJOR" : 5,
+	"SETTINGS_FILE" : "C:/Users/pop_a/Desktop/worksheet5.1/qt_designer/build/CMakeFiles/hello_qt_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[ "C:/Users/pop_a/Desktop/worksheet5.1/qt_designer/main.cpp", "MU" ],
+		[
+			"C:/Users/pop_a/Desktop/worksheet5.1/qt_designer/mainwindow.cpp",
+			"MU"
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"VERBOSITY" : 0
+}

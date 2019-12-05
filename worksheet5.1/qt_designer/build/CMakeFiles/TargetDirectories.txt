@@ -1,0 +1,4 @@
+C:/Users/pop_a/Desktop/worksheet5.1/qt_designer/build/CMakeFiles/hello_qt2.dir
+C:/Users/pop_a/Desktop/worksheet5.1/qt_designer/build/CMakeFiles/edit_cache.dir
+C:/Users/pop_a/Desktop/worksheet5.1/qt_designer/build/CMakeFiles/rebuild_cache.dir
+C:/Users/pop_a/Desktop/worksheet5.1/qt_designer/build/CMakeFiles/hello_qt2_autogen.dir
