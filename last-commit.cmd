@@ -1,1 +1,0 @@
-git show --pretty=oneline --no-patch

@@ -1,4 +1,0 @@
-C:/Users/pop_a/Desktop/worksheet5.1/hello_qt_cm/build/CMakeFiles/hello_qt.dir
-C:/Users/pop_a/Desktop/worksheet5.1/hello_qt_cm/build/CMakeFiles/edit_cache.dir
-C:/Users/pop_a/Desktop/worksheet5.1/hello_qt_cm/build/CMakeFiles/rebuild_cache.dir
-C:/Users/pop_a/Desktop/worksheet5.1/hello_qt_cm/build/CMakeFiles/hello_qt_autogen.dir

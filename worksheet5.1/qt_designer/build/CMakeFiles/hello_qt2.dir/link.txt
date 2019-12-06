@@ -1,3 +1,0 @@
-"C:\Program Files\CMake\bin\cmake.exe" -E remove -f CMakeFiles\hello_qt2.dir/objects.a
-C:\Users\pop_a\Desktop\the-folder-for-qt\Tools\mingw730_32\bin\ar.exe cr CMakeFiles\hello_qt2.dir/objects.a @CMakeFiles\hello_qt2.dir\objects1.rsp
-C:\Users\pop_a\Desktop\the-folder-for-qt\Tools\mingw730_32\bin\g++.exe   -mwindows -Wl,--whole-archive CMakeFiles\hello_qt2.dir/objects.a -Wl,--no-whole-archive  -o hello_qt2.exe -Wl,--out-implib,libhello_qt2.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\hello_qt2.dir\linklibs.rsp
