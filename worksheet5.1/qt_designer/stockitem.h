@@ -1,7 +1,9 @@
 #ifndef STOCK_ITEM_H
 #define STOCK_ITEM_H
 #include <QString>
+
 class StockItem {
+
 public:
 	StockItem() :
 		name("Item_Name"), unitCost(0.), stockLevel(0), reorder(false) {}
@@ -17,6 +19,8 @@ public:
 	double getUnitCost() const;
 	int getStockLevel() const;
 	bool getReorder() const;
+
+
 private:
 	QString name;
 	double unitCost;

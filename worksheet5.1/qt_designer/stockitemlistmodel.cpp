@@ -3,53 +3,62 @@
 
 // function allows listview to determine the number of items in list
 int StockItemListModel::rowCount( const QModelIndex & parent ) const {
-return stockItems.size();
+    return stockItems.size();
 }
 
 QVariant StockItemListModel::data( const QModelIndex & index, int role ) const {
-// Check that the index is valid
-if( !index.isValid() ) return QVariant();
-if( index.row() >= stockItems.size() || index.row() < 0 ) return QVariant();
-// Return item name as display variable
-if( role == Qt::DisplayRole ) {
-return QVariant( stockItems[index.row()].getName() );
-} else {
-return QVariant();
+    // Check that the index is valid
+    if( !index.isValid() ) return QVariant();
+    if( index.row() >= stockItems.size() || index.row() < 0 ) return QVariant();
+    // Return item name as display variable
+    if( role == Qt::DisplayRole ) {
+        return QVariant( stockItems[index.row()].getName() );
+    } else {
+        return QVariant();
+    }
 }
-}
+
 // To allow modifying stored list
 void StockItemListModel::addItem( const StockItem & s ) {
-// This emits a signal to warn the listView that extra rows will be added
-emit beginInsertRows( QModelIndex(), stockItems.size()-1, stockItems.size()-1 );
-// Add the extra item to the list
-stockItems.push_back( s );
-// Emits a signal to say rows have been added.
-emit endInsertRows();
+    // This emits a signal to warn the listView that extra rows will be added
+    emit beginInsertRows( QModelIndex(), stockItems.size()-1, stockItems.size()-1 );
+    // Add the extra item to the list
+    stockItems.push_back( s );
+    // Emits a signal to say rows have been added.
+    emit endInsertRows();
 }
+
+
 void StockItemListModel::insertItem( const StockItem &s, const QModelIndex & index ) {
-//?? (same as add item)
+    //?? (same as add item)
 }
+
+
 void StockItemListModel::setItem( const StockItem &s, const QModelIndex & index ) {
-if( index.isValid() && index.row() >= 0 && index.row() < stockItems.size() ) {
-// Just replace the item in the vector
-stockItems[index.row()] = s;
+    if( index.isValid() && index.row() >= 0 && index.row() < stockItems.size() ) {
+        // Just replace the item in the vector
+        stockItems[index.row()] = s;
 
-// Need to emit a signal that tells listView the data has changed
-emit dataChanged( index, index ); // index is the first and last row to be changed
-}
-}
-void StockItemListModel::removeItem( const QModelIndex & index ) {
-        emit beginInsertRows( QModelIndex(), stockItems.size()-1, stockItems.size()-1 );
-        // Add the extra item to the listk( s );
-        stockItems.erase(stockItems.begin()+index.row());
-        // Emits a signal to say rows have been added.
-        emit endInsertRows();
-
+        // Need to emit a signal that tells listView the data has changed
+        emit dataChanged( index, index ); // index is the first and last row to be changed
     }
+}
+
+
+void StockItemListModel::removeItem( const QModelIndex & index ) {
+    emit beginInsertRows( QModelIndex(), stockItems.size()-1, stockItems.size()-1 );
+    // Add the extra item to the listk( s );
+    stockItems.erase(stockItems.begin()+index.row());
+    // Emits a signal to say rows have been added.
+    emit endInsertRows();
+
+}
+
+
 // to allow accessing stored list item properties
 StockItem StockItemListModel::getItem( const QModelIndex & index ) const {
-if( index.isValid() && index.row() >= 0 && index.row() < stockItems.size() )
-return stockItems[index.row()];
-return StockItem();
+    if( index.isValid() && index.row() >= 0 && index.row() < stockItems.size() )
+        return stockItems[index.row()];
+    return StockItem();
 }
 // ---------------------------------------------------------------------

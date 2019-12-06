@@ -9,25 +9,25 @@
 
 
 namespace Ui {
-class MainWindow;
+	class MainWindow;
 }
 
 class MainWindow : public QMainWindow
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
 
-    explicit MainWindow(QWidget *parent = 0);
+	explicit MainWindow(QWidget* parent = 0);
 	~MainWindow();
 
-	
+
 
 
 public slots:
-	  void handleAdd();
-	  void handleEdit();
-	  void handleRemove();
+	void handleAdd();
+	void handleEdit();
+	void handleRemove();
 
 
 signals:
@@ -38,10 +38,10 @@ private slots:
 	void on_actionsaveAs_triggered();
 
 private:
-    Ui::MainWindow *ui;
+	Ui::MainWindow* ui;
 	StockItemListModel stockList;
-	
-	
+
+
 };
 
 #endif // MAINWINDOW_H
