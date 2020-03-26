@@ -1,12 +1,7 @@
-# .travis.yml
- sudo: false
+# .travis.ylm
+# Modified travis script that generates and submits doxygen documentation
+sudo: false
 
 branches:
-  except: 
+  except:
     - gh-pages
-
-# Build your code 
-script:
-  - cmake . 
-  - make 
-  - make test 
