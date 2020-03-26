@@ -1,11 +1,20 @@
+# This will run on Travis' 'new' container-based infrastructure
+sudo: false
+
+# Blacklist
+branches:
+  except:
+    - gh-pages
+
 # Modify these variables that will be used in generateDocumentationAndDeploy.sh
 # (see below). They tell Doxygen where to find the source on and where to send
 # the generated documentation.
+
 env:
-  global:
-    - GH_REPO_NAME: [H62PEP-20114838]
-    - DOXYFILE: $TRAVIS_BUILD_DIR/Doxyfile
-    - GH_REPO_REF: github.com/[POPEYECHANYAMON]/[H62PEP-20114838].git
+global:
+- GH_REPO_NAME: [H62PEP-20114838]
+- DOXYFILE: $TRAVIS_BUILD_DIR/Doxyfile
+- GH_REPO_REF: github.com/[POPEYECHANYAMON]/[H62PEP-20114838].git
 
 # The virtual machines created by Travis do not by default have doxygen
 # installed. This is fortunately not difficult on a Debian flavoured Linux
@@ -14,7 +23,7 @@ addons:
   apt:
     packages:
       - doxygen
-      - graphviz
+      - graphviz 
 
 # Finally we define the script that Travis will run every time code is submitted
 # to the repository.
