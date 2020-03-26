@@ -1,38 +1,37 @@
-# This will run on Travis' 'new' container-based infrastructure
+# .travis.ylm
+# Modified travis script that generates and submits doxygen documentation
 sudo: false
 
-# Blacklist
 branches:
   except:
     - gh-pages
 # Modify these variables that will be used in generateDocumentationAndDeploy.sh
 # (see below). They tell Doxygen where to find the source on and where to send
 # the generated documentation.
-env:
-  global:
+env: 
+  global: 
     - GH_REPO_NAME: H62PEP-20114838
-    - DOXYFILE: $TRAVIS_BUILD_DIR/Doxyfile
+    - DOXYFILE: $TRAVIS_BUILD_DIR/Doxyfile 
     - GH_REPO_REF: github.com/POPEYECHANYAMON/H62PEP-20114838.git
-
 # The virtual machines created by Travis do not by default have doxygen
-# installed. This is fortunately not difficult on a Debian flavoured Linux
+# installed. This is fortunately not difficult on a Debian flavoured Linux 
 # system.
-addons:
-  apt:
-    packages:
-      - doxygen
-      - graphviz 
-# Finally we define the script that Travis will run every time code is submitted
-# to the repository.
-script:
-  - cmake .
-  - make
-  - make test
+addons: 
+  apt: 
+    packages: 
+      - doxygen 
+      - graphviz
+# Finally we define the script that Travis will run every time code is submitted 
+# to the repository. 
+script: 
   - cd worksheet7
-# After successfully building and testing your software we give Doxygen the
-# instruction to scan the code for docstrings and generate the html output.
-# The bulk of these instructions is encapsulated in a script.
-after_success:
-  - cd $TRAVIS_BUILD_DIR
-  - chmod +x generateDocumentationAndDeploy.h
+  - cmake .
+  - make 
+  - make test
+# After successfully building and testing your software we give Doxygen the 
+# instruction to scan the code for docstrings and generate the html output. 
+# The bulk of these instructions is encapsulated in a script. 
+after_success: 
+  - cd $TRAVIS_BUILD_DIR 
+  - chmod +x generateDocumentationAndDeploy.h 
   - ./generateDocumentationAndDeploy.h

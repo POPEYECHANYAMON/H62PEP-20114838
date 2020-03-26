@@ -1,5 +1,0 @@
-git show - shows changes you've made
-git log - shows history
-git checkout - navigate between branches
-git init - creates new respository
-git reset - undo changes 
