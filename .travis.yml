@@ -11,10 +11,10 @@ branches:
 # the generated documentation.
 
 env:
-global:
-- GH_REPO_NAME: [H62PEP-20114838]
-- DOXYFILE: $TRAVIS_BUILD_DIR/Doxyfile
-- GH_REPO_REF: github.com/[POPEYECHANYAMON]/[H62PEP-20114838].git
+  global:
+    - GH_REPO_NAME: [H62PEP-20114838]
+    - DOXYFILE: $TRAVIS_BUILD_DIR/Doxyfile
+    - GH_REPO_REF: github.com/[POPEYECHANYAMON]/[H62PEP-20114838].git
 
 # The virtual machines created by Travis do not by default have doxygen
 # installed. This is fortunately not difficult on a Debian flavoured Linux
