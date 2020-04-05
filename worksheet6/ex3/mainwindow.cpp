@@ -1,5 +1,6 @@
+
+/////vtk headers///
 #include <vtkSmartPointer.h>
-#include <vtkCubeSource.h>
 #include <vtkActor.h>
 #include <vtkProperty.h>
 #include <vtkCamera.h>
@@ -11,16 +12,29 @@
 #include <vtkNamedColors.h>
 #include <vtkNew.h>
 #include <vtkGenericOpenGLRenderWindow.h>
-#include <QFileDialog>
+
+/////source//////
+#include <vtkCubeSource.h>
+
+//// For reading////
 #include <vtkSTLReader.h>
-#include <QColorDialog>
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
 #include <vtkPolyDataMapper.h>
+
+///color///
+#include <QColorDialog>
+
+//light intensity////
 #include <vtkLight.h>
+
+//filters///
 #include <vtkPlane.h>
 #include <vtkClipDataSet.h>
 
+/////#include <QMessageBox> ////
+#include <QFileDialog>
+
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
 
 
 
@@ -42,7 +56,7 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWi
 	// Now use the VTK libraries to render something. To start with you can copy-paste the cube example code, there are comments to show where the code must be modified.
 	//--------------------------------------------- Code From Example 1 --------------------------------------------------------------------------
 
-	//choosing file by ourself
+	//choosing file by me
 	QString fileName = QFileDialog::getOpenFileName(this, tr("Open STL File"), "./", tr("STL Files(*.stl)"));
 	std::string str = fileName.toUtf8().constData();
 	reader = vtkSmartPointer<vtkSTLReader>::New();
