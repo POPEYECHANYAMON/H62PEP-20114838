@@ -20,6 +20,9 @@
 #include <vtkClipDataSet.h>
 #include <vtkSTLReader.h>
 
+#include <vtkAxesActor.h>
+#include <vtkTransform.h>
+
 namespace Ui {
     class MainWindow;
 }
@@ -52,6 +55,9 @@ private slots:
     void handleResetCamera();
     void on_clipfilter_clicked(bool checked);
     void on_shrinkfilter_clicked(bool checked);
+    void on_EdgeCheckBox_toggled(bool checked);
+    void on_AxesCheckBox_stateChanged(int checked);
+
     
 
 private:
@@ -60,7 +66,8 @@ private:
     vtkSmartPointer<vtkPlane> planeLeft = vtkSmartPointer<vtkPlane>::New();
     vtkSmartPointer<vtkClipDataSet> clipfilter = vtkSmartPointer<vtkClipDataSet>::New();
     vtkSmartPointer<vtkShrinkFilter> shrinkfilter = vtkSmartPointer<vtkShrinkFilter>::New();
-   
+    vtkSmartPointer<vtkAxesActor> axes;
+    vtkSmartPointer<vtkTransform> transform;
 };
    
 

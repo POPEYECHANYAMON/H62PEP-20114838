@@ -17,6 +17,7 @@ rm -rf *
 echo "" > .nojekyll 
 echo '<html><meta http-equiv="Refresh" content="0; url=https://popeyechanyamon.github.io/H62PEP-20114838/html/" /></html>' > index.html
 pwd
+
 doxygen $DOXYFILE 2>&1 | tee doxygen.log 
 if [ -d "html" ] && [ -f "html/index.html" ]; then
 

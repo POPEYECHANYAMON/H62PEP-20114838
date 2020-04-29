@@ -36,6 +36,10 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+/// Axes//
+#include <vtkAxesActor.h>
+#include <vtkTransform.h>
+
 
 
 
@@ -110,7 +114,14 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWi
 	// Render and interact
 	//renderWindow->Render();					// ###### Not needed with Qt ######
 	//renderWindowInteractor->Start();			// ###### Not needed with Qt ######
-	//--------------------------------------------- /Code From Example 1 -------------------------------------------------------------------------*/
+	
+	transform = vtkSmartPointer<vtkTransform>::New();
+	axes = vtkSmartPointer<vtkAxesActor>::New();
+
+	//positon of axes
+	transform->Translate(1.0, 0.0, 0.0);
+	axes->SetUserTransform(transform);
+
 }
 void MainWindow::on_actionFileOpen_triggered()
 {
@@ -146,6 +157,39 @@ void MainWindow::handleBackgroundColor()
 		ui->qvtkWidget->GetRenderWindow()->Render();
 	}
 }
+
+// edge  //////////
+void MainWindow::on_EdgeCheckBox_toggled(bool checked)
+{
+
+	if (checked)
+	{
+		actor->GetProperty()->SetRepresentationToWireframe();
+	}
+	else
+	{
+		actor->GetProperty()->SetRepresentationToSurface();
+	}
+	ui->qvtkWidget->GetRenderWindow()->Render();
+}
+
+
+// Axes ////////////
+
+void MainWindow::on_AxesCheckBox_stateChanged(int checked)
+{
+	if (checked) // checked
+	{
+		renderer->AddActor(axes);
+	}
+	else // unchecked
+	{
+		renderer->RemoveActor(axes);
+	}
+	ui->qvtkWidget->GetRenderWindow()->Render();
+
+}
+
 ////////////////////slide of light intensity ////////////////
 
 void MainWindow::on_Slider_sliderMoved(int position)
