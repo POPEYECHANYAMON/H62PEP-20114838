@@ -7,21 +7,26 @@
 #include <vtkRenderWindow.h>
 #include <vtkRenderWindowInteractor.h>
 #include <vtkRenderer.h>
-#include <vtkNamedColors.h>
 #include <vtkNew.h>
 #include <vtkGenericOpenGLRenderWindow.h>
-#include <QMainWindow>
-#include <QColorDialog>
-#include <QColor>
-#include <vtkLight.h>
 #include <vtkPlane.h>
 #include <vtkSTLReader.h>
+//color//
+#include <QColorDialog>
+#include <QColor>
+#include <vtkNamedColors.h>
+//light//
+#include <vtkLight.h>
+//shrink//
 #include <vtkShrinkFilter.h>
+//clip//
 #include <vtkClipDataSet.h>
-#include <vtkSTLReader.h>
-
+/// Axes//
 #include <vtkAxesActor.h>
 #include <vtkTransform.h>
+
+
+
 
 namespace Ui {
     class MainWindow;
@@ -57,6 +62,7 @@ private slots:
     void on_shrinkfilter_clicked(bool checked);
     void on_EdgeCheckBox_toggled(bool checked);
     void on_AxesCheckBox_stateChanged(int checked);
+   
 
     
 

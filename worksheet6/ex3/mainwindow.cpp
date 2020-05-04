@@ -70,10 +70,14 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWi
 	mapper = vtkSmartPointer<vtkDataSetMapper>::New();
 	mapper->SetInputConnection(reader->GetOutputPort());
 
+
+	// initialisation for features
+
+	light = vtkSmartPointer<vtkLight>::New();
 	// Create an actor that is used to set the cube's properties for rendering and place it in the window
 	actor = vtkSmartPointer<vtkActor>::New();
 	actor->SetMapper(mapper);
-	actor->GetProperty()->EdgeVisibilityOn();
+	////actor->GetProperty()->EdgeVisibilityOn();
 
 	colors = vtkSmartPointer<vtkNamedColors>::New();
 	actor->GetProperty()->SetColor(colors->GetColor3d("Blue").GetData());
@@ -144,6 +148,7 @@ void MainWindow::handleObjectColor()
 		actor->GetProperty()->SetColor(QTcolor.redF(), QTcolor.greenF(), QTcolor.blueF());
 		//ui->qvtkWidget->GetRenderWindow()->AddRenderer( renderer );
 		ui->qvtkWidget->GetRenderWindow()->Render();
+		
 	}
 }
 
@@ -155,6 +160,7 @@ void MainWindow::handleBackgroundColor()
 	{
 		renderer->SetBackground(QTcolor.redF(), QTcolor.greenF(), QTcolor.blueF());
 		ui->qvtkWidget->GetRenderWindow()->Render();
+		
 	}
 }
 
@@ -169,8 +175,10 @@ void MainWindow::on_EdgeCheckBox_toggled(bool checked)
 	else
 	{
 		actor->GetProperty()->SetRepresentationToSurface();
+	
 	}
 	ui->qvtkWidget->GetRenderWindow()->Render();
+	
 }
 
 
@@ -185,9 +193,10 @@ void MainWindow::on_AxesCheckBox_stateChanged(int checked)
 	else // unchecked
 	{
 		renderer->RemoveActor(axes);
+
 	}
 	ui->qvtkWidget->GetRenderWindow()->Render();
-
+	
 }
 
 ////////////////////slide of light intensity ////////////////
@@ -201,6 +210,7 @@ void MainWindow::on_Slider_sliderMoved(int position)
 		light->SetIntensity(1);
 	}
 	ui->qvtkWidget->GetRenderWindow()->Render();
+	
 }
 
 //checked box before adjust the light intensity
@@ -213,6 +223,7 @@ void MainWindow::on_checkBox_clicked(bool checked)
 		light->SetIntensity(1);
 	}
 	ui->qvtkWidget->GetRenderWindow()->Render();
+	
 }
 
 ////clip filter ///
@@ -227,7 +238,12 @@ void MainWindow::on_clipfilter_clicked(bool checked)
 		clipfilter->SetClipFunction(planeLeft.Get());
 		mapper->SetInputConnection(clipfilter->GetOutputPort());
 	}
+	else {
 
+		mapper->SetInputConnection(reader->GetOutputPort()); //turn to normal model
+	}
+	
+	
 	ui->qvtkWidget->GetRenderWindow()->Render();
 }
 
@@ -243,6 +259,12 @@ void MainWindow::on_shrinkfilter_clicked(bool checked)
 		mapper->SetInputConnection(shrinkfilter->GetOutputPort());
 		
 	}
+	else {
+
+		mapper->SetInputConnection(reader->GetOutputPort()); //turn to normal model
+
+	}
+	
 	ui->qvtkWidget->GetRenderWindow()->Render();
 }
 
@@ -254,10 +276,11 @@ void MainWindow::handleResetCamera()
 	renderer->ResetCamera();
 	mapper->SetInputConnection(reader->GetOutputPort());
 	
-	//light->SetIntensity(1);
 
 	ui->qvtkWidget->GetRenderWindow()->Render();
 }
+
+
 
 
 MainWindow::~MainWindow()
